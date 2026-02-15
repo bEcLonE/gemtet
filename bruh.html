@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<title>Hành Trình Lì Xì Giấc Mơ</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<style>
+*{box-sizing:border-box;}
+
+body{
+    margin:0;
+    font-family:"Inter", sans-serif;
+    background:linear-gradient(135deg,#1f2937,#111827);
+    color:#e5e7eb;
+}
+
+/* SCREEN */
+.screen{
+    min-height:100vh;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    padding:40px 20px;
+    animation:fadeIn 0.8s ease;
+}
+
+/* CARD */
+.card{
+    background:#1f2937;
+    padding:60px;
+    max-width:1000px;
+    width:100%;
+    border-radius:20px;
+    box-shadow:0 25px 70px rgba(0,0,0,0.55);
+    border:1px solid #374151;
+    position:relative;
+    overflow:hidden;
+}
+
+
+/* INTRO STYLE */
+.intro-title{
+    font-size:42px;
+    font-weight:700;
+    margin-bottom:25px;
+    color:#f9fafb;
+}
+
+.story{
+    font-size:18px;
+    line-height:1.8;
+    color:#d1d5db;
+    text-align:left;
+    margin-bottom:30px;
+}
+
+/* GAME TEXT */
+h2{
+    font-size:34px;
+    margin-bottom:10px;
+}
+
+.region-name{
+    font-size:22px;
+    font-weight:600;
+    color:#a5b4fc;
+    margin-bottom:10px;
+}
+
+.region-story{
+    font-size:17px;
+    color:#d1d5db;
+    margin-bottom:20px;
+}
+
+/* BUTTON */
+button{
+    background:#6366f1;
+    color:white;
+    border:none;
+    padding:14px 24px;
+    margin:10px;
+    border-radius:10px;
+    font-size:17px;
+    font-weight:600;
+    cursor:pointer;
+    transition:0.25s;
+}
+
+button:hover{
+    background:#4f46e5;
+    transform:translateY(-2px);
+}
+
+/* SYMBOLS */
+.symbols{
+    margin-top:15px;
+}
+
+.symbols span{
+    font-size:36px;
+    margin:6px;
+    display:inline-block;
+    animation:pop 0.35s;
+}
+
+/* LIXI GATES */
+.lixi{
+    display:inline-block;
+    background:#374151;
+    color:#f9fafb;
+    padding:18px 22px;
+    margin:10px;
+    border-radius:12px;
+    cursor:pointer;
+    font-weight:bold;
+    font-size:22px;
+    transition:0.25s;
+    border:1px solid #4b5563;
+}
+
+.lixi:hover{
+    background:#4b5563;
+    transform:scale(1.05);
+}
+
+.hidden{ display:none; }
+
+@keyframes fadeIn{
+    from{opacity:0; transform:translateY(20px);}
+    to{opacity:1; transform:translateY(0);}
+}
+
+@keyframes pop{
+    from{transform:scale(0);}
+    to{transform:scale(1);}
+}
+/* GRID 3x3 */
+#gates{
+    display:grid;
+    grid-template-columns:repeat(3, 1fr);
+    gap:35px;
+    justify-items:center;
+    margin-top:40px;
+}
+
+/* LÌ XÌ */
+.lixi{
+    width:200px;
+    height:230px;
+    background:linear-gradient(160deg,#ef4444,#b91c1c);
+    border-radius:16px;
+    position:relative;
+    cursor:pointer;
+    transition:0.25s;
+    box-shadow:0 15px 35px rgba(0,0,0,0.5);
+    display:flex;
+    align-items:center;
+    justify-content:center;   /* căn giữa nội dung */
+    border:2px solid rgba(255,255,255,0.15);
+}
+
+/* nắp bao */
+.lixi::before{
+    content:"";
+    position:absolute;
+    top:0;
+    left:0;
+    right:0;
+    height:45px;
+    background:rgba(0,0,0,0.18);
+    border-top-left-radius:16px;
+    border-top-right-radius:16px;
+}
+
+/* hover */
+.lixi:hover{
+    transform:translateY(-8px) scale(1.05);
+}
+
+
+/* số cổng */
+.gate-number{
+    position:absolute;
+    top:10px;
+    width:100%;
+    text-align:center;
+    font-size:18px;
+    font-weight:700;
+    color:#fde68a;
+}
+
+/* icon trong cổng */
+.lixi-symbols{
+    position:absolute;
+    top:55%;
+    left:50%;
+    transform:translate(-50%, -50%);
+    font-size:32px;
+    display:flex;
+    gap:10px;
+}
+#lixi h2{
+    text-align:center;
+    margin-bottom:30px;
+}
+
+
+</style>
+</head>
+
+<body>
+
+<!-- INTRO -->
+<div class="screen" id="intro">
+<div class="card">
+<div class="intro-title">Hành Trình Lì Xì Giấc Mơ</div>
+
+<div class="story">
+Ngoài kia, pháo hoa đã bắt đầu nổ từng chùm sáng trên bầu trời đêm Tết.  
+Âm thanh rộn ràng vang khắp xóm làng, nhưng dưới gốc đào già ở cuối con đường nhỏ, chú ngựa con lạc mẹ đã ngủ thiếp đi từ lúc nào.  
+
+Cánh đào rơi lả tả, đậu lên bờm, phủ lên đôi mi khép hờ một lớp hồng phai như tấm chăn mỏng của mùa xuân.  
+Hơi thở chú đều đều, nhẹ đến mức tưởng như gió cũng không dám thổi mạnh.  
+
+Và rồi giấc mơ đến.  
+Không báo trước. Không tiếng động.  
+Chỉ một con đường đỏ rực hiện ra trước móng chân chú, dẫn đến chín cánh cổng lì xì khổng lồ…  
+
+Muốn tìm được mẹ, chú phải vượt qua năm vùng đất của giấc mơ.
+</div>
+
+<button onclick="startGame()">Bắt đầu hành trình</button>
+</div>
+</div>
+
+<!-- GAME -->
+<div class="screen hidden" id="game">
+<div class="card">
+<h2 id="title"></h2>
+<div class="region-name" id="regionName"></div>
+<div class="region-story" id="regionStory"></div>
+
+<p id="question"></p>
+<div id="answers"></div>
+<div class="symbols" id="symbols"></div>
+</div>
+</div>
+
+<!-- LIXI -->
+<div class="screen hidden" id="lixi">
+<div class="card">
+<h2>Chọn Cổng</h2>
+<div id="gates"></div>
+</div>
+</div>
+
+<script>
+const regions = [
+{
+name:"Vùng Đất Rồng Thức Giấc",
+story:"Mặt đất khẽ rung lên. Những bức tượng cổ xưa nứt ra từng đường sáng, như có thứ gì đó đang tỉnh giấc sau giấc ngủ ngàn năm.",
+q:"Con giáp năm 2024 là gì?",
+a:["Thìn","Mão","Tý"],
+c:0
+},
+{
+name:"Cánh Đồng Bánh Xanh",
+story:"Những khối vuông phủ lá xanh nằm im lặng giữa cánh đồng sương sớm. Hương thơm ấm áp lan tỏa như ký ức của những cái Tết xưa.",
+q:"Bánh chưng tượng trưng cho điều gì?",
+a:["Trời","Đất","Biển"],
+c:1
+},
+{
+name:"Khu Vườn Ánh Xuân",
+story:"Một khu vườn rộng mở trước mắt, những cánh hoa rung rinh trong gió xuân, tỏa ra thứ ánh sáng dịu dàng và ấm áp.",
+q:"Hoa miền Nam nở dịp Tết?",
+a:["Mai","Đào","Sen"],
+c:0
+},
+{
+name:"Ngôi Làng Bình Minh",
+story:"Khói bếp bay lên từ những mái nhà nhỏ. Tiếng người gọi nhau, tiếng cười và những lời đầu năm vang vọng khắp con đường làng.",
+q:"Phong tục đầu năm mang may mắn?",
+a:["Cãi nhau","Chúc Tết","Ngủ cả ngày"],
+c:1
+},
+{
+name:"Kho Báu Trong Sương",
+story:"Giữa làn sương mờ, một chiếc rương cổ phát ra ánh sáng ấm áp. Bên trong là thứ khiến lòng người cảm thấy đủ đầy và hy vọng.",
+q:"Màu tượng trưng cho tài lộc?",
+a:["Đỏ","Đen","Xám"],
+c:0
+}
+];
+
+
+const realSymbols = ["🐉","🧧","🌸","🎋","💰"];
+const fakeSymbols = ["☠️","👻","🕷","🐍","🐎"];
+
+let current=0;
+let collected=[];
+let realCollected=[];
+
+function startGame(){
+    intro.classList.add("hidden");
+    game.classList.remove("hidden");
+    showQuestion();
+}
+
+function showQuestion(){
+    if(current>=regions.length){
+        showLixi();
+        return;
+    }
+    const r=regions[current];
+    title.innerText="Vùng đất "+(current+1);
+    regionName.innerText=r.name;
+    regionStory.innerText=r.story;
+    question.innerText=r.q;
+
+    answers.innerHTML="";
+    r.a.forEach((ans,i)=>{
+        let btn=document.createElement("button");
+        btn.innerText=ans;
+        btn.onclick=()=>answer(i);
+        answers.appendChild(btn);
+    });
+}
+
+function answer(choice){
+    const r=regions[current];
+    realCollected.push(realSymbols[current]);
+
+    if(choice===r.c){
+        collected.push(realSymbols[current]);
+    }else{
+        collected.push(realSymbols[current]);
+        collected.push(fakeSymbols[current]);
+    }
+    current++;
+    updateSymbols();
+    showQuestion();
+}
+
+function updateSymbols(){
+    symbols.innerHTML=collected.map(s=>"<span>"+s+"</span>").join("");
+}
+
+function showLixi(){
+    game.classList.add("hidden");
+    lixi.classList.remove("hidden");
+
+    const gates=document.getElementById("gates");
+    gates.innerHTML="";
+
+    const correctCode = realCollected.join("");
+
+    // Khu ký hiệu (ở trên)
+    let symbolBox=document.createElement("div");
+    symbolBox.style.textAlign="center";
+    symbolBox.style.marginBottom="40px";
+    symbolBox.innerHTML=`
+        <h3>Ký hiệu bạn đã thu thập</h3>
+        <div class="symbols">
+            ${collected.map(s=>"<span>"+s+"</span>").join("")}
+        </div>
+    `;
+    gates.appendChild(symbolBox);
+
+    // Lưới 3x3 bên dưới
+    let grid=document.createElement("div");
+    grid.style.display="grid";
+    grid.style.gridTemplateColumns="repeat(3, 1fr)";
+    grid.style.gap="35px";
+    grid.style.justifyItems="center";
+
+    let gatesData=[];
+    gatesData.push({code: correctCode, money: 200000});
+
+    for(let i=1;i<9;i++){
+        let code=[...realCollected];
+        let mistakes=Math.floor(Math.random()*3)+1;
+        for(let j=0;j<mistakes;j++){
+            let idx=Math.floor(Math.random()*5);
+            code[idx]=fakeSymbols[idx];
+        }
+        let correctCount = code.filter((s,i)=>s===realCollected[i]).length;
+        let money = 50000 + correctCount*30000;
+        gatesData.push({code: code.join(""), money: money});
+    }
+
+    gatesData.sort(()=>Math.random()-0.5);
+
+    gatesData.forEach((g, index)=>{
+        let div=document.createElement("div");
+        div.className="lixi";
+
+        div.innerHTML = `
+            <div class="gate-number">Cổng ${index+1}</div>
+            <div class="lixi-symbols">${g.code}</div>
+        `;
+
+        div.onclick=()=>showResult(g.money);
+        grid.appendChild(div);
+    });
+
+    gates.appendChild(grid);
+}
+
+
+function showResult(money){
+    lixi.classList.add("hidden");
+
+    const result=document.createElement("div");
+    result.className="screen";
+    result.innerHTML=`
+        <div class="card">
+            <h2>Chúc Mừng Năm Mới</h2>
+            <p>
+            Chúc bạn một năm mới bình an, 
+            gặp nhiều may mắn  
+            và đạt được nhiều thành công trong cuộc sống nhé <36
+            </p>
+            <h1 style="color:#818cf8;font-size:48px">${money.toLocaleString()} đ</h1>
+        </div>
+    `;
+    document.body.appendChild(result);
+}
+</script>
+
+</body>
+</html>
